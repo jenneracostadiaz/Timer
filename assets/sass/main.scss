@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+$cBlanco: #efefef;
+$cNegro: #1e1e1e;
+$cCeleste: #00caca;
+$cGris: #565656;
+
+body {
+	background-color: $cBlanco;
+	color: $cNegro;
+	font-family: 'Montserrat', sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 90%;
+	max-width: 1280px;
+	margin: auto;
+}
+
+.main-header {
+	padding: 40px 0;
+	.main-header__title {
+		font-weight: 900;
+		position: relative;
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -5px;
+			width: 80px;
+			height: 10px;
+			background-color: $cCeleste;
+		}
+	}
+}
+
+.main-footer {
+	background-color: $cNegro;
+	color: $cBlanco;
+	text-align: center;
+	padding: 40px 0;
+	margin-top: 60px;
+	.main-footer__copy {
+		.main-footer__copy-year {
+			color: $cCeleste;
+		}
+	}
+}
+
+.container-primary {
+	padding: 120px 0;
+	ul {
+		list-style: none;
+	}
+	button {
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+	}
+}
+
+.tab {
+	.tab__nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		.tab__nav-item-btn {
+			padding: 20px 30px;
+			color: $cGris;
+			margin: 0 10px;
+			border-radius: 20px;
+			display: flex;
+			align-items: center;
+			&.active {
+				font-weight: 900;
+				box-shadow: 0 0 20px rgba($cGris, 0.25);
+			}
+			svg {
+				margin-right: 5px;
+			}
+		}
+	}
+	.tab__content {
+		.tab__content-item {
+			display: none;
+			&.active {
+				display: block;
+			}
+		}
+	}
+}
+
+.hora-actual {
+	text-align: center;
+	.hora-actual__time {
+		font-weight: 900;
+		font-size: 80px;
+		padding: 40px 0;
+		display: block;
+		@media screen and (min-width: 768px) {
+			font-size: 120px;
+		}
+		@media screen and (min-width: 1200px) {
+			font-size: 200px;
+		}
+	}
+	.hora-actual__fecha {
+		color: $cCeleste;
+		font-weight: 900;
+	}
+}
+
+.cuenta-regresiva {
+	.cuenta-regresiva__selector {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		padding: 40px 0;
+		label {
+			font-weight: 700;
+		}
+		input {
+			border: 0;
+			padding: 20px 30px;
+			border-radius: 20px;
+			margin: 10px;
+		}
+		button {
+			background-color: $cCeleste;
+			color: $cBlanco;
+			padding: 10px;
+			border-radius: 10px;
+			font-weight: 700;
+		}
+	}
+	.cuenta-regresiva__timer {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		.cuenta-regresiva__timer-item {
+			font-weight: 900;
+			font-size: 62px;
+			margin: 10px;
+			@media screen and(min-width: 1200px) {
+				font-size: 120px;
+			}
+		}
+	}
+}
